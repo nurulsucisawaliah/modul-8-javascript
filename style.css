@@ -1,0 +1,40 @@
+.container{
+    width: 750px;
+    margin: auto;
+    background-color: rgb(241, 227, 227);
+    border: 2px solid blue;
+}
+
+body{
+    font: 16px/28px roboto, san-serif;
+    background-color: #e2dede;
+    color: #333;
+}
+
+.tanggal{
+    color: rgb(32, 30, 30);
+}
+
+.tengah{
+    color: black;
+    padding-left: 15px;
+}
+
+.tengah h2{
+    margin-bottom: -2px;
+}
+
+.tengah br{
+    margin-top: 5px;
+}
+
+
+.formulir{
+    color: black;
+    padding-left: 15px;
+}
+
+.kalkulator{
+    color: black;
+    padding-left: 15px;
+}
