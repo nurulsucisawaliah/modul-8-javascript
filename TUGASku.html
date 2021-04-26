@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="atas">
+            <script src="isi.js" lang="javascript"></script>
+        </div>
+
+        <div class="tengah">
+            <h2> Daftar Menu</h2>
+            <script lang="javascript">
+                menu = new Array("1. Ayam Goreng + Nasi + Es Teh (20k)", "2. Ayam Goreng + Nasi (15k)", 
+                "3. Indomie + Telur (10k)", "4. Indomie + Telur + Nasi (8k)", " 5.Tempe (5k)")
+    
+                for(var i=0; i< 5; i++){
+                    document.write(menu[i] + "<br>");
+                }
+            </script>
+            <br> <b><i>*isilah formulir dibawah untuk melakukan pemesanan</i></b> 
+        </div>
+
+
+        <div class="tanggal" >
+            <script lang="javascript">
+                var hari =new Array("senin","selasa","rabu","kamis","jumat","sabtu","minggu");
+                var bulan = new Array("jan", "feb","maret","april","juni","juli","agus","sept","okt","nov","des");
+                var t = new Date();
+                var hari_ini = t.getDay();
+                var tanggal = t.getDate();
+                var bulan_ini = t.getMonth();
+                var tahun_ini = t.getFullYear();
+                var menit = t.getMinutes();
+                var jam = t.getHours();
+        
+                var hariini = hari[t.getDay()-1];
+                var bln = bulan[t.getMonth()];
+
+                document.write("<hr>");
+                document.write( "<center><i>" + hariini +  " " +tanggal +" " + bln + " " + tahun_ini + "  " +  "jam " + jam + " :" + menit + " </i></center>");
+            </script>
+        </div>
+
+        <div class="formulir">
+            <script>
+            function data(){
+                var nama = (document.dform.nama.value);
+                document.dform.onama.value = nama;
+                var pesanan = (document.dform.pesanan.value);
+                document.dform.opesanan.value = pesanan;
+                var antri = (document.dform.antri.value);
+                document.dform.oantri.value = antri;
+            }
+            </script>
+
+            <form name="dform">
+<pre>
+nama    : <input type="text" name="nama">
+antrian : <input type="text" name="antri">
+pesanan : <select name="pesanan">
+    <option value="ayam goreng+nasi+esteh">Ayam Goreng + Nasi + Es Teh</option>
+    <option value="ayam goreng+nasi ">Ayam Goreng + Nasi</option>
+    <option value="indomie+telur"> Indomie + Telur</option>
+    <option value="indomie+telur+nasi">Indomie + Telur + Nasi</option>
+    <option value="tempe">Tempe</option>
+</select>
+</pre>          
+            <input type="button" value="input" onclick="data()">
+            <input type="reset" value="reset">
+            <h2>output : </h2>
+            nama : <input type="text" name="onama">
+            antrian : <input type="text" name="oantri">
+            pesanan : <input type="text" name="opesanan">
+            </form>
+            <p> <b><i>*setelah itu hitunglah total bayar anda, lalu lakukan pembayaran</i></b> </p>
+        </div>
+
+        <div class="kalkulator">
+            <form name="eform">
+                <pre>
+harga    : <input type="text" name="harga">
+jumlah   : <input type="text" name="jumlah">
+                </pre>
+                <br>
+                <input type="button" value="hitung" onclick="total()">
+                <input type="reset" value="reset">
+            </form>
+            <script>
+                function total(){
+                    var harga = parseFloat(document.eform.harga.value);
+                    var jumlah = parseFloat(document.eform.jumlah.value);
+    
+                    if (isNaN(harga))
+                    harga =0.0;
+                    if (isNaN(jumlah))
+                    jumlah =0.0;
+    
+                    var total = harga * jumlah;
+                    alert("Totalnya adalah" + total)
+                }
+            </script>
+    
+        </div>
+    </div>
+
+</body>
+</html>
